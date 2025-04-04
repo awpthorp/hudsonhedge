@@ -64,6 +64,18 @@
         border-color: theme('colors.rolex-gold');
       }
 
+      /* Animation classes */
+      .animate-fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .animate-fade-up.appear {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
     </style>
     <style>
       /* Apply custom font using @layer base AFTER Tailwind CSS is loaded */
@@ -158,10 +170,10 @@
                  </div>
         </section>
 
-        <section id="team" class="py-20 md:py-28 bg-white">
+        <section id="team" class="py-20 md:py-28 bg-white animate-fade-up">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">About us/h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">About us</h2>
                     <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto">Established in 2015 to enable our clients to access genuinely independent and unconflicted advice while benefiting from decades of financial market knowledge and experience.</p>
                 </div>
@@ -189,7 +201,7 @@
         </section>
 
         <!-- New Services Section (Moved Here) -->
-        <section id="services" class="py-20 md:py-28 bg-white">
+        <section id="services" class="py-20 md:py-28 bg-white animate-fade-up">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Our Services</h2>
@@ -216,7 +228,7 @@
             </div>
         </section>
 
-        <section id="insights" class="py-20 md:py-28 bg-brand-light">
+        <section id="insights" class="py-20 md:py-28 bg-brand-light animate-fade-up">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Insights</h2>
@@ -255,7 +267,7 @@
             </div>
         </section>
 
-        <section id="uhuru-investment" class="py-20 md:py-28 bg-brand-light">
+        <section id="uhuru-investment" class="py-20 md:py-28 bg-brand-light animate-fade-up">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Uhuru Investment Holdings</h2>
                 <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
@@ -268,7 +280,7 @@
             </div>
         </section>
 
-         <section id="funds" class="py-20 md:py-28 bg-white">
+         <section id="funds" class="py-20 md:py-28 bg-white animate-fade-up">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Hudson Hedge Funds</h2>
@@ -325,7 +337,7 @@
         </section>
 
         <!-- New Experience Section -->
-        <section id="experience" class="py-20 md:py-28 bg-brand-light">
+        <section id="experience" class="py-20 md:py-28 bg-brand-light animate-fade-up">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <div class="text-gray-700 space-y-4">
@@ -342,7 +354,7 @@
             </div>
         </section>
 
-        <section id="contact" class="py-20 md:py-28 bg-white">
+        <section id="contact" class="py-20 md:py-28 bg-white animate-fade-up">
             <div class="container mx-auto px-6 text-center">
                  <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Speak to us…</h2>
                  <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
@@ -403,17 +415,28 @@
             });
         });
 
-        // Optional: Close mobile menu if clicking outside of it (more advanced)
-        // document.addEventListener('click', function(event) {
-        //     const isClickInsideMenu = mobileMenu.contains(event.target);
-        //     const isClickOnButton = menuButton.contains(event.target);
-        //
-        //     if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
-        //         mobileMenu.classList.add('hidden');
-        //         menuIcon.classList.remove('hidden');
-        //         closeIcon.classList.add('hidden');
-        //     }
-        // });
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    // Optional: if you want the animation to replay when scrolling back up
+                    // } else {
+                    //     entry.target.classList.remove('appear');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections with animation class
+        document.querySelectorAll('.animate-fade-up').forEach((section) => {
+            observer.observe(section);
+        });
 
     </script>
 
