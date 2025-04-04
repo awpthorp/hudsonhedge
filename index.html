@@ -17,7 +17,7 @@
               'brand-accent': '#e5e7eb', // Accent grey for borders etc.
             },
             fontFamily: {
-              sans: ['trajan-pro-3', 'serif'], // Changed font to Trajan Pro 3 via Adobe Fonts
+              // sans: ['Cinzel', 'serif'], // REMOVED: Will apply via @layer base instead
             },
           }
         }
@@ -30,8 +30,8 @@
     <style>
       @font-face {
         font-family: 'LucideIcons';
-        /* Updated URL to jsdelivr as unpkg sometimes has issues */
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+        /* Updated URL to correct path: /fonts/lucide.ttf */
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@0.399.0/fonts/lucide.ttf) format('truetype');
       }
       .lucide {
         font-family: 'LucideIcons';
@@ -61,13 +61,25 @@
       }
 
     </style>
+    <style>
+      /* Apply custom font using @layer base AFTER Tailwind CSS is loaded */
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @layer base {
+        body {
+          font-family: 'trajan-pro-3', serif;
+        }
+      }
+    </style>
 </head>
-<body class="font-sans bg-brand-light text-brand-dark antialiased">
+<body class="bg-brand-light text-brand-dark antialiased">
 
     <header class="bg-white shadow-md sticky top-0 z-50 w-full">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#home" class="text-xl sm:text-2xl font-bold text-rolex-green hover:text-rolex-gold transition duration-300">
-                Hudson Hedge Capital
+            <a href="#home" class="block hover:opacity-80 transition duration-300">
+                <img src="images/Horse-logo-transparent.png" alt="Hudson Hedge Capital Logo" class="h-10 sm:h-12">
             </a>
 
             <ul class="hidden lg:flex items-center space-x-6 xl:space-x-8">
@@ -77,8 +89,8 @@
                 <li><a href="#funds" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">Our Funds</a></li>
                 <li><a href="#contact" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">Contact Us</a></li>
                 <li>
-                    <a href="#" download="hudson-hedge-brochure.pdf" class="bg-rolex-gold hover:bg-yellow-700 text-white font-semibold py-2 px-5 rounded-md shadow hover:shadow-md transition duration-300 inline-flex items-center text-sm">
-                        <span class="lucide mr-2 text-lg">&#xe91e;</span> Our Brochure
+                    <a href="Uhuru_Intro.pdf" download="Uhuru_Intro.pdf" style="background-color: #006039;" class="hover:opacity-90 text-white font-semibold py-2 px-5 rounded-md shadow hover:shadow-md transition duration-300 inline-flex items-center text-sm">
+                         Our Brochure
                     </a>
                 </li>
             </ul>
@@ -96,7 +108,7 @@
                 <li><a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-rolex-green hover:text-white rounded-md transition duration-300 w-full text-center mobile-link">Contact Us</a></li>
                 <li>
                     <a href="#" download="hudson-hedge-brochure.pdf" class="mt-2 bg-rolex-gold hover:bg-yellow-700 text-white font-semibold py-2 px-5 rounded-md shadow hover:shadow-md transition duration-300 inline-flex items-center text-sm mobile-link">
-                        <span class="lucide mr-2 text-lg">&#xe91e;</span> Our Brochure
+                         Our Brochure
                     </a>
                 </li>
             </ul>
@@ -115,12 +127,12 @@
             <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-[-1]"></div>
 
             <div class="container mx-auto px-6 text-center relative z-10">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">Hudson Hedge
-                    Capital</h1>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 leading-tight">Hudson Hedge
+                    <br><span class="block text-2xl md:text-3xl lg:text-4xl">Capital</span></h1>
                 <p class="text-lg md:text-xl mb-8 text-green-100 max-w-3xl mx-auto">A Dubai headquartered independent Wealth Management firm, providing Investment Management, Financial Planning and Trading Services.</p>
-                <a href="#funds" class="bg-rolex-gold hover:bg-yellow-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center">
+                <a href="#funds" style="background-color: #006039;" class="hover:opacity-90 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center">
                     Explore Our Funds
-                    <span class="lucide ml-2 text-xl">&#xea17;</span> </a>
+                     </a>
                  </div>
         </section>
 
@@ -168,7 +180,7 @@
                         <p class="text-gray-600 text-sm mb-3">[Date Published or Category]</p>
                         <p class="text-gray-700 flex-grow">[Brief excerpt or summary of the insight - replace this text.]</p>
                         <a href="#" class="text-rolex-gold hover:text-yellow-700 font-medium mt-4 inline-flex items-center self-start">
-                            Read More <span class="lucide ml-1 text-lg">&#xea17;</span>
+                            Read More 
                         </a>
                     </div>
                      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex flex-col">
@@ -177,7 +189,7 @@
                         <p class="text-gray-600 text-sm mb-3">[Date Published or Category]</p>
                         <p class="text-gray-700 flex-grow">[Brief excerpt or summary of the insight - replace this text.]</p>
                         <a href="#" class="text-rolex-gold hover:text-yellow-700 font-medium mt-4 inline-flex items-center self-start">
-                            Read More <span class="lucide ml-1 text-lg">&#xea17;</span>
+                            Read More 
                         </a>
                     </div>
                      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex flex-col">
@@ -186,7 +198,7 @@
                          <p class="text-gray-600 text-sm mb-3">[Date Published or Category]</p>
                         <p class="text-gray-700 flex-grow">[Brief excerpt or summary of the insight - replace this text.]</p>
                         <a href="#" class="text-rolex-gold hover:text-yellow-700 font-medium mt-4 inline-flex items-center self-start">
-                            Read More <span class="lucide ml-1 text-lg">&#xea17;</span>
+                            Read More 
                         </a>
                     </div>
                 </div>
@@ -220,7 +232,7 @@
                                     minimum 50% p.a.</span></li>
                             </ul>
                             <a href="Uhuru_Intro.pdf" class="text-rolex-gold hover:text-yellow-700 font-medium mt-3 inline-flex items-center">
-                                Download Brochure <span class="lucide ml-1 text-lg">&#xea17;</span>
+                                Download Brochure 
                             </a>
                         </div>
                     </div>
@@ -236,7 +248,7 @@
                                 <li><span class="text-gray-700">[Key Feature or Benefit 2]</span></li>
                             </ul>
                              <a href="#contact" class="text-rolex-gold hover:text-yellow-700 font-medium mt-3 inline-flex items-center">
-                                Inquire Now <span class="lucide ml-1 text-lg">&#xea17;</span>
+                                Inquire Now 
                             </a>
                         </div>
                     </div>
@@ -299,7 +311,7 @@
                         </div>
                         <div>
                             <button type="submit" class="w-full bg-rolex-gold hover:bg-yellow-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex items-center justify-center">
-                                Send Message <span class="lucide ml-2 text-xl">&#xe9b8;</span> </button>
+                                Send Message </button>
                         </div>
                     </form>
                      </div>
