@@ -24,26 +24,30 @@
       }
     </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+      /* Custom Tailwind configuration moved after main script */
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rolex-green': '#006039',
+              'rolex-gold': '#A37E2C',
+              'brand-dark': '#1f2937', // Slightly softer dark grey
+              'brand-light': '#f9fafb', // Slightly different light grey
+              'brand-accent': '#e5e7eb', // Accent grey for borders etc.
+            },
+            fontFamily: {
+              // sans: ['Cinzel', 'serif'], // REMOVED: Will apply via @layer base instead
+            },
+          }
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://use.typekit.net/uqt2qqu.css">
     <style>
-      @font-face {
-        font-family: 'LucideIcons';
-        /* Updated URL to correct path: /fonts/lucide.ttf */
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@0.399.0/fonts/lucide.ttf) format('truetype');
-      }
-      .lucide {
-        font-family: 'LucideIcons';
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      /* Custom Rolex colors and other theme settings for Tailwind - MOVED TO SCRIPT TAG */
+      /* REMOVED @font-face and .lucide styles for LucideIcons */
 
       /* Smooth scrolling behavior */
       html {
@@ -107,7 +111,13 @@
             </ul>
 
             <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
-                <span class="lucide text-2xl menu-icon">&#xe96d;</span> <span class="lucide text-2xl close-icon hidden">&#xea0f;</span> </button>
+                <svg class="menu-icon h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg class="close-icon h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
         </nav>
 
         <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-brand-accent py-3">
@@ -129,16 +139,16 @@
 
     <main>
 
-        <section id="home" class="relative bg-gradient-to-br from-rolex-green to-green-800 text-white py-24 md:py-32 min-h-screen flex items-center overflow-hidden">
+        <section id="home" class="relative text-white py-24 md:py-32 min-h-screen flex items-center overflow-hidden">
             <!-- Background Video -->
-            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
                 <source src="video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <!-- Overlay -->
-            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-[-1]"></div>
+            <div class="absolute top-0 left-0 w-full h-full bg-black/15 z-[1]"></div>
 
-            <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="container mx-auto px-6 text-center relative z-[2]">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 leading-tight">Hudson Hedge
                     <br><span class="block text-2xl md:text-3xl lg:text-4xl">Capital</span></h1>
                 <p class="text-lg md:text-xl mb-8 text-white max-w-3xl mx-auto">A Dubai headquartered independent Wealth Management firm, providing Investment Management, Financial Planning and Trading Services.</p>
@@ -152,8 +162,8 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Our Team</h2>
+                    <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto">Established in 2015 to enable our clients to access genuinely independent and unconflicted advice while benefiting from decades of financial market knowledge and experience.</p>
-                    <div class="h-1 w-20 bg-rolex-gold mx-auto mt-4 rounded-full"></div>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 justify-center">
                     <div class="text-center p-4 bg-brand-light rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
@@ -183,7 +193,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Our Services</h2>
-                    <div class="h-1 w-20 bg-rolex-gold mx-auto mt-4 rounded-full"></div>
+                    <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
                     <!-- Service 1: Hudson Hedge Wealth -->
@@ -204,8 +214,8 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Insights</h2>
-                     <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our latest perspectives on market trends, economic analysis, and investment opportunities.</p>
-                     <div class="h-1 w-20 bg-rolex-gold mx-auto mt-4 rounded-full"></div>
+                    <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our latest perspectives on market trends, economic analysis, and investment opportunities.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex flex-col">
@@ -242,13 +252,13 @@
         <section id="uhuru-investment" class="py-20 md:py-28 bg-brand-light">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Uhuru Investment Holdings</h2>
+                <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">This presentation outlines Uhuru's unique investment strategy, designed to provide investors with robust, managed exposure to the stock market while striving to consistently delivering above-average returns.</p>
                 <div class="mt-8">
                      <a href="Uhuru_Intro.pdf" download="Uhuru_Intro.pdf" style="background-color: #006039;" class="hover:opacity-90 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center">
                         Download Brochure
                     </a>
                 </div>
-                 <div class="h-1 w-20 bg-rolex-gold mx-auto mt-6 rounded-full"></div>
             </div>
         </section>
 
@@ -256,8 +266,8 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Hudson Hedge Funds</h2>
-                     <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our range of investment vehicles designed to meet diverse investor objectives.</p>
-                     <div class="h-1 w-20 bg-rolex-gold mx-auto mt-4 rounded-full"></div>
+                    <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our range of investment vehicles designed to meet diverse investor objectives.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
                     <!-- Fund 1: Woodville Consultants -->
@@ -326,9 +336,10 @@
             </div>
         </section>
 
-        <section id="contact" class="py-20 md:py-28 bg-brand-dark text-gray-300">
+        <section id="contact" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold mb-8">Speak to us…</h2>
+                 <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Speak to us…</h2>
+                 <div class="h-1 w-20 bg-rolex-gold mx-auto mb-4 rounded-full"></div>
                 
                  <div class="mb-4">
                      <a href="#" style="background-color: #006039;" class="hover:opacity-90 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 inline-block">
@@ -336,7 +347,7 @@
                     </a>
                  </div>
 
-                 <p class="text-lg text-black max-w-md mx-auto">Choose a convenient time to have a quick call with one of our advisors.</p>
+                 <p class="text-gray-600 text-lg max-w-md mx-auto">Choose a convenient time to have a quick call with one of our advisors.</p>
             </div>
         </section>
 
@@ -355,7 +366,7 @@
                 <a href="#insights" class="text-gray-400 hover:text-rolex-gold px-2">Insights</a> |
                 <a href="#funds" class="text-gray-400 hover:text-rolex-gold px-2">Our Funds</a> |
                  <a href="#contact" class="text-gray-400 hover:text-rolex-gold px-2">Contact Us</a> |
-                 <a href="Uhuru_Intro.pdf" download="Uhuru_Intro.pdf" class="text-gray-400 hover:text-rolex-gold px-2">Our Brochure</a>
+                 <a href="Uhuru_Intro.pdf" download="Uhuru_Intro.pdf" class="text-gray-400 hover:text-rolex-gold px-2">Uhuru Investment</a>
                  </div>
              </div>
     </footer>
