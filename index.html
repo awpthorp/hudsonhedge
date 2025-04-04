@@ -71,6 +71,15 @@
         body {
           font-family: 'trajan-pro-3', serif;
         }
+        /* Apply gold color to main section headings */
+        #team h2,
+        #services .text-center h2, /* Target h2 within the text-center div */
+        #insights h2,
+        #uhuru-investment h2,
+        #funds h2,
+        #experience h2 {
+          color: #A37E2C; /* rolex-gold hex code */
+        }
       }
     </style>
 </head>
@@ -84,7 +93,8 @@
 
             <ul class="hidden lg:flex items-center space-x-6 xl:space-x-8">
                 <li><a href="#home" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">Home</a></li>
-                <li><a href="#team" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">About Us</a></li>
+                <li><a href="#team" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">About us</a></li>
+                <li><a href="#services" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">Our Services</a></li>
                 <li><a href="#insights" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">Insights</a></li>
                 <li><a href="#funds" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">Our Funds</a></li>
                 <li><a href="#contact" class="text-gray-700 hover:text-rolex-gold transition duration-300 font-medium">Contact Us</a></li>
@@ -103,6 +113,7 @@
              <ul class="flex flex-col items-center space-y-3">
                 <li><a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-rolex-green hover:text-white rounded-md transition duration-300 w-full text-center mobile-link">Home</a></li>
                 <li><a href="#team" class="block px-4 py-2 text-gray-700 hover:bg-rolex-green hover:text-white rounded-md transition duration-300 w-full text-center mobile-link">Our Team</a></li>
+                <li><a href="#services" class="block px-4 py-2 text-gray-700 hover:bg-rolex-green hover:text-white rounded-md transition duration-300 w-full text-center mobile-link">Our Services</a></li>
                 <li><a href="#insights" class="block px-4 py-2 text-gray-700 hover:bg-rolex-green hover:text-white rounded-md transition duration-300 w-full text-center mobile-link">Insights</a></li>
                 <li><a href="#funds" class="block px-4 py-2 text-gray-700 hover:bg-rolex-green hover:text-white rounded-md transition duration-300 w-full text-center mobile-link">Our Funds</a></li>
                 <li><a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-rolex-green hover:text-white rounded-md transition duration-300 w-full text-center mobile-link">Contact Us</a></li>
@@ -129,7 +140,7 @@
             <div class="container mx-auto px-6 text-center relative z-10">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 leading-tight">Hudson Hedge
                     <br><span class="block text-2xl md:text-3xl lg:text-4xl">Capital</span></h1>
-                <p class="text-lg md:text-xl mb-8 text-gray-200 max-w-3xl mx-auto">A Dubai headquartered independent Wealth Management firm, providing Investment Management, Financial Planning and Trading Services.</p>
+                <p class="text-lg md:text-xl mb-8 text-white max-w-3xl mx-auto">A Dubai headquartered independent Wealth Management firm, providing Investment Management, Financial Planning and Trading Services.</p>
                 <a href="#funds" style="background-color: #006039;" class="hover:opacity-90 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center">
                     Explore Our Funds
                      </a>
@@ -139,7 +150,7 @@
         <section id="team" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-green mb-3">About Us</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Our Team</h2>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto">Established in 2015 to enable our clients to access genuinely independent and unconflicted advice while benefiting from decades of financial market knowledge and experience.</p>
                     <div class="h-1 w-20 bg-rolex-gold mx-auto mt-4 rounded-full"></div>
                 </div>
@@ -166,10 +177,32 @@
             </div>
         </section>
 
+        <!-- New Services Section (Moved Here) -->
+        <section id="services" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Our Services</h2>
+                    <div class="h-1 w-20 bg-rolex-gold mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Service 1: Hudson Hedge Wealth -->
+                    <div class="bg-brand-light p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold text-rolex-green mb-4">Hudson Hedge Wealth</h3>
+                        <p class="text-gray-700">Whether you're thinking about the legacy you want to leave, planning a fulfilling retirement, or simply want to grow your portfolio and plan tax efficiently, by building a relationship based on trust and understanding, we can help you achieve what's important to you.</p>
+                    </div>
+                    <!-- Service 2: Hudson Hedge Markets -->
+                    <div class="bg-brand-light p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold text-rolex-green mb-4">Hudson Hedge Markets</h3>
+                        <p class="text-gray-700">In today's financial markets, good execution must be a key principle of any investor's strategy. Our execution services combine highly experienced traders with the most advanced trading technology and a personal service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="insights" class="py-20 md:py-28 bg-brand-light">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-green mb-3">Insights</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Insights</h2>
                      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Our latest perspectives on market trends, economic analysis, and investment opportunities.</p>
                      <div class="h-1 w-20 bg-rolex-gold mx-auto mt-4 rounded-full"></div>
                 </div>
@@ -207,7 +240,7 @@
 
         <section id="uhuru-investment" class="py-20 md:py-28 bg-brand-light">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-rolex-green mb-3">Uhuru Investment Holdings</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Uhuru Investment Holdings</h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">This presentation outlines Uhuru's unique investment strategy, designed to provide investors with robust, managed exposure to the stock market while striving to consistently delivering above-average returns.</p>
                 <div class="mt-8">
                      <a href="Uhuru_Intro.pdf" download="Uhuru_Intro.pdf" style="background-color: #006039;" class="hover:opacity-90 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center">
@@ -221,52 +254,52 @@
          <section id="funds" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 md:mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-green mb-3">Our Funds</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-3">Hudson Hedge Funds</h2>
                      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore our range of investment vehicles designed to meet diverse investor objectives.</p>
                      <div class="h-1 w-20 bg-rolex-gold mx-auto mt-4 rounded-full"></div>
                 </div>
-                <div class="space-y-12">
+                <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
                     <!-- Fund 1: Woodville Consultants -->
-                    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-                        <div class="order-1">
-                             <img src="https://placehold.co/600x400/ffffff/006039?text=Woodville+Visual" alt="Woodville Consultants Visual" class="rounded-lg shadow-xl w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Not+Found';">
+                    <div class="bg-brand-light p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex flex-col">
+                        <div>
+                             <img src="https://placehold.co/600x400/ffffff/006039?text=Woodville+Visual" alt="Woodville Consultants Visual" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Not+Found';">
                         </div>
-                        <div class="order-2 md:order-1 text-gray-700 space-y-4">
-                            <h3 class="text-2xl font-semibold text-rolex-green mb-3">Woodville Consultants</h3>
-                            <p class="text-base md:text-lg">A leading UK based litigation funding specialist, offers qualified investors a fixed income (paid quarterly) with a choice.</p>
-                            <a href="#contact" class="text-rolex-gold hover:text-yellow-700 font-medium mt-3 inline-flex items-center">
-                                Inquire Now 
+                        <div class="text-gray-700 space-y-3 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-rolex-green">Woodville Consultants</h3>
+                            <p class="text-base flex-grow">A leading UK based litigation funding specialist, offers qualified investors a fixed income (paid quarterly) with a choice.</p>
+                            <a href="#contact" class="text-rolex-gold hover:text-yellow-700 font-medium mt-auto self-start inline-flex items-center">
+                                Inquire Now
                             </a>
                         </div>
                     </div>
                     <!-- Fund 2: Zenith Energy -->
-                    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-                        <div class="order-2 md:order-1">
-                             <img src="https://placehold.co/600x400/ffffff/006039?text=Zenith+Visual" alt="Zenith Energy Visual" class="rounded-lg shadow-xl w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Not+Found';">
+                     <div class="bg-brand-light p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex flex-col">
+                        <div>
+                             <img src="https://placehold.co/600x400/ffffff/006039?text=Zenith+Visual" alt="Zenith Energy Visual" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Not+Found';">
                         </div>
-                        <div class="order-1 md:order-2 text-gray-700 space-y-4">
-                            <h3 class="text-2xl font-semibold text-rolex-green mb-3">Zenith Energy</h3>
-                            <p class="text-base md:text-lg">Listed on the London Stock Exchange, and the Oslo Stock Exchange has made tremendous strides. It bought.</p>
-                             <a href="#contact" class="text-rolex-gold hover:text-yellow-700 font-medium mt-3 inline-flex items-center">
-                                Inquire Now 
+                        <div class="text-gray-700 space-y-3 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-rolex-green">Zenith Energy</h3>
+                            <p class="text-base flex-grow">Listed on the London Stock Exchange, and the Oslo Stock Exchange has made tremendous strides. It bought.</p>
+                             <a href="#contact" class="text-rolex-gold hover:text-yellow-700 font-medium mt-auto self-start inline-flex items-center">
+                                Inquire Now
                             </a>
                         </div>
                     </div>
                     <!-- Fund 3: UK Asset Manager -->
-                    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-                        <div class="order-1">
-                             <img src="https://placehold.co/600x400/ffffff/006039?text=Asset+Manager+Visual" alt="UK Asset Manager Visual" class="rounded-lg shadow-xl w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Not+Found';">
+                     <div class="bg-brand-light p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex flex-col">
+                        <div>
+                             <img src="https://placehold.co/600x400/ffffff/006039?text=Asset+Manager+Visual" alt="UK Asset Manager Visual" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Not+Found';">
                         </div>
-                        <div class="order-2 md:order-1 text-gray-700 space-y-4">
-                            <h3 class="text-2xl font-semibold text-rolex-green mb-3">UK Asset Manager</h3>
-                            <ul class="list-disc list-inside space-y-1 text-rolex-green">
+                        <div class="text-gray-700 space-y-3 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-rolex-green">UK Asset Manager</h3>
+                            <ul class="list-disc list-inside space-y-1 text-sm text-rolex-green flex-grow">
                                 <li><span class="text-gray-700">Award Winning</span></li>
                                 <li><span class="text-gray-700">Family Owned 50+ Years' Experince</span></li>
                                 <li><span class="text-gray-700">100% Track Record of Repayments</span></li>
                                 <li><span class="text-gray-700">100%</span></li>
                             </ul>
-                             <a href="#contact" class="text-rolex-gold hover:text-yellow-700 font-medium mt-3 inline-flex items-center">
-                                Inquire Now 
+                             <a href="#contact" class="text-rolex-gold hover:text-yellow-700 font-medium mt-auto self-start inline-flex items-center">
+                                Inquire Now
                             </a>
                         </div>
                     </div>
@@ -279,7 +312,7 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <div class="text-gray-700 space-y-4">
-                        <h2 class="text-3xl md:text-4xl font-bold text-rolex-green mb-6">We have the experience</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-rolex-gold mb-6">We have the experience</h2>
                         <p class="text-base md:text-lg">Hudson Hedge was established to allow our clients to benefit from our teams decades of financial market knowledge and experience in senior positions at large firms, in an independent and unconflicted way.</p>
                         <p class="text-base md:text-lg">An important distinction is our ongoing commitment to maintaining our unbiased outlook with no conflicts as a result of "in-house" products.</p>
                         <p class="text-base md:text-lg">We invest only in teams and strategies that we believe to be best in class and deliver the best outcome for our client.</p>
@@ -311,16 +344,17 @@
     <footer class="bg-gray-900 text-gray-400 py-10">
         <div class="container mx-auto px-6 text-center">
              <p>&copy; <span id="current-year"></span> Hudson Hedge Capital. All Rights Reserved.</p>
-            <p class="text-sm mt-2">Disclaimer: This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities.</p>
             <p class="text-sm mt-2">© 2025 Hudson Hedge Capital Ltd | Hudson Hedge Capital Ltd is a fully incorporated company in Belize financial services commission Company Number: 1948/23/</p>
             <p class="text-sm mt-2">HUDSON HEDGE CAPITAL COMMERCIAL BROKERS CO. L.L.C Dubai license 1248862</p>
             <p class="text-sm mt-2">When investing your capital is at risk, which means the value of your investments can both rise and fall over time. You must be comfortable in the knowledge that you may receive less than you originally invested. Past performance may not repeat itself. Regulatory Information</p>
             <div class="mt-4">
                 <a href="#home" class="text-gray-400 hover:text-rolex-gold px-2">Home</a> |
-                <a href="#team" class="text-gray-400 hover:text-rolex-gold px-2">Our Team</a> |
+                <a href="#team" class="text-gray-400 hover:text-rolex-gold px-2">About us</a> |
+                <a href="#services" class="text-gray-400 hover:text-rolex-gold px-2">Our Services</a> |
                 <a href="#insights" class="text-gray-400 hover:text-rolex-gold px-2">Insights</a> |
                 <a href="#funds" class="text-gray-400 hover:text-rolex-gold px-2">Our Funds</a> |
-                 <a href="#contact" class="text-gray-400 hover:text-rolex-gold px-2">Contact Us</a>
+                 <a href="#contact" class="text-gray-400 hover:text-rolex-gold px-2">Contact Us</a> |
+                 <a href="Uhuru_Intro.pdf" download="Uhuru_Intro.pdf" class="text-gray-400 hover:text-rolex-gold px-2">Our Brochure</a>
                  </div>
              </div>
     </footer>
