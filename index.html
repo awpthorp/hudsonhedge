@@ -104,6 +104,44 @@
 </head>
 <body class="bg-brand-light text-brand-dark antialiased">
 
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+      "symbols": [
+        {
+          "proName": "FOREXCOM:SPXUSD",
+          "title": "S&P 500 Index"
+        },
+        {
+          "proName": "FOREXCOM:NSXUSD",
+          "title": "US 100 Cash CFD"
+        },
+        {
+          "proName": "FX_IDC:EURUSD",
+          "title": "EUR to USD"
+        },
+        {
+          "proName": "BITSTAMP:BTCUSD",
+          "title": "Bitcoin"
+        },
+        {
+          "proName": "BITSTAMP:ETHUSD",
+          "title": "Ethereum"
+        }
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": false,
+      "displayMode": "adaptive",
+      "colorTheme": "light",
+      "locale": "en"
+    }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+
     <header class="bg-white shadow-md sticky top-0 z-50 w-full">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#home" class="block hover:opacity-80 transition duration-300">
@@ -150,44 +188,6 @@
             </ul>
         </div>
     </header>
-
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-      {
-      "symbols": [
-        {
-          "proName": "FOREXCOM:SPXUSD",
-          "title": "S&P 500 Index"
-        },
-        {
-          "proName": "FOREXCOM:NSXUSD",
-          "title": "US 100 Cash CFD"
-        },
-        {
-          "proName": "FX_IDC:EURUSD",
-          "title": "EUR to USD"
-        },
-        {
-          "proName": "BITSTAMP:BTCUSD",
-          "title": "Bitcoin"
-        },
-        {
-          "proName": "BITSTAMP:ETHUSD",
-          "title": "Ethereum"
-        }
-      ],
-      "showSymbolLogo": true,
-      "isTransparent": false,
-      "displayMode": "adaptive",
-      "colorTheme": "light",
-      "locale": "en"
-    }
-      </script>
-    </div>
-    <!-- TradingView Widget END -->
 
     <main>
 
@@ -341,13 +341,13 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Fund 2: Zenith Energy -->
+                    <!-- Fund 2: Energy -->
                      <div class="bg-brand-light p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex flex-col">
                         <div>
-                             <img src="images/zenith.png" alt="Zenith Energy Visual" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Not+Found';">
+                             <img src="images/zenith.png" alt="Energy Visual" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/94a3b8?text=Image+Not+Found';">
                         </div>
                         <div class="text-gray-700 space-y-3 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-rolex-green">Zenith Energy</h3>
+                            <h3 class="text-xl font-semibold text-rolex-green">Energy</h3>
                             <p class="text-base flex-grow">Listed on the London Stock Exchange, and the Oslo Stock Exchange has made tremendous strides. It bought.</p>
                              <a href="#contact" class="text-rolex-gold hover:text-yellow-700 font-medium mt-auto self-start inline-flex items-center">
                                 Inquire Now
